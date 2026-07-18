@@ -14,7 +14,9 @@ The first experiment asks:
 
 > Can a small local model reliably triage customer-support tickets—and catch the cases that need a human?
 
-The repository includes a manually reviewed synthetic dataset, a published labeling policy, deterministic scoring, and a local Ollama runner. Future releases will add error analysis, human-calibrated graders, statistical comparisons, and new product workflows.
+The repository includes a manually reviewed synthetic dataset, a published labeling policy, deterministic scoring, a zero-setup baseline, and a local Ollama runner. Version 0.2 adds failure taxonomies, slice-level analysis, reproducibility fingerprints, and explicit product decision gates.
+
+**[Try the 60-second baseline](https://github.com/Reddy986/open-product-evals#try-the-complete-eval-loop-in-60-seconds)** or follow **[Learn LLM evals by doing](https://github.com/Reddy986/open-product-evals/blob/main/docs/EVALS_101.md)**.
 
 ## What I care about
 
