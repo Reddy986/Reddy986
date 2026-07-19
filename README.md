@@ -14,11 +14,11 @@ The first experiment asks:
 
 > Can a small local model reliably triage customer-support tickets—and catch the cases that need a human?
 
-The repository includes a manually reviewed synthetic dataset, a published labeling policy, deterministic scoring, a zero-setup baseline, and a local Ollama runner. Version 0.2.1 publishes the first reproducible open-model comparison, including raw outputs, failure analysis, runtime details, and honest limitations.
+The repository includes a manually reviewed synthetic dataset, a published labeling policy, deterministic scoring, a zero-setup baseline, and a local Ollama runner. Version 0.2.2 publishes a complete decision cycle: a pre-committed prompt experiment, its rejection, a frozen held-out gate, and the resulting failed prototype decision.
 
-**Latest finding:** Qwen3 4B was more accurate than Gemma 3 4B on the 40-ticket development set, while Gemma 3 was about 21 times faster by median latency. This is development evidence, not a production-safety claim.
+**Latest decision:** Qwen3 4B passed the development gate but failed the one-time test gate because exact match was 60% against a pre-committed 70% threshold. The prototype was rejected, the raw failures were published, and the consumed test set was permanently marked as a regression suite.
 
-**[Read the model decision](https://github.com/Reddy986/open-product-evals/tree/main/results/published/2026-07-18-open-model-comparison)**, **[try the 60-second baseline](https://github.com/Reddy986/open-product-evals#try-the-complete-eval-loop-in-60-seconds)**, or follow **[Learn LLM evals by doing](https://github.com/Reddy986/open-product-evals/blob/main/docs/EVALS_101.md)**.
+**[Read the held-out decision](https://github.com/Reddy986/open-product-evals/tree/main/results/published/2026-07-18-qwen3-v1-held-out)**, **[try the 60-second baseline](https://github.com/Reddy986/open-product-evals#try-the-complete-eval-loop-in-60-seconds)**, or follow **[Learn LLM evals by doing](https://github.com/Reddy986/open-product-evals/blob/main/docs/EVALS_101.md)**.
 
 ## What I care about
 
