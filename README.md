@@ -14,11 +14,13 @@ The first experiment asks:
 
 > Can a small local model reliably triage customer-support tickets—and catch the cases that need a human?
 
-The repository includes a manually reviewed synthetic dataset, a published labeling policy, deterministic scoring, a zero-setup baseline, and a local Ollama runner. Version 0.2.2 publishes a complete decision cycle: a pre-committed prompt experiment, its rejection, a frozen held-out gate, and the resulting failed prototype decision.
+The repository includes a manually reviewed synthetic dataset, a published labeling policy, deterministic scoring, a zero-setup baseline, and a local Ollama runner. Version 0.2.3 publishes a complete decision cycle and adds paired prompt-regression reports that show exactly which examples improved, regressed, or became invalid.
 
 **Latest decision:** Qwen3 4B passed the development gate but failed the one-time test gate because exact match was 60% against a pre-committed 70% threshold. The prototype was rejected, the raw failures were published, and the consumed test set was permanently marked as a regression suite.
 
-**[Read the held-out decision](https://github.com/Reddy986/open-product-evals/tree/main/results/published/2026-07-18-qwen3-v1-held-out)**, **[try the 60-second baseline](https://github.com/Reddy986/open-product-evals#try-the-complete-eval-loop-in-60-seconds)**, or follow **[Learn LLM evals by doing](https://github.com/Reddy986/open-product-evals/blob/main/docs/EVALS_101.md)**.
+**Latest audit:** The generated Qwen prompt report found and corrected a hand-counting error: an invalid-schema response had been credited as a field improvement. This is why eval tooling should make failure transitions reproducible, not anecdotal.
+
+**[See the paired prompt report](https://github.com/Reddy986/open-product-evals/blob/main/results/published/2026-07-18-priority-rubric-v2/qwen3-4b-variant-comparison.md)**, **[try the 60-second baseline](https://github.com/Reddy986/open-product-evals#try-the-complete-eval-loop-in-60-seconds)**, or follow **[Learn LLM evals by doing](https://github.com/Reddy986/open-product-evals/blob/main/docs/EVALS_101.md)**.
 
 ## What I care about
 
