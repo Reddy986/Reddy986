@@ -14,13 +14,15 @@ The first experiment asks:
 
 > Can a small local model reliably triage customer-support tickets—and catch the cases that need a human?
 
-The repository includes a manually reviewed synthetic dataset, a published labeling policy, deterministic scoring, a zero-setup baseline, and a local Ollama runner. Version 0.2.3 publishes a complete decision cycle and adds paired prompt-regression reports that show exactly which examples improved, regressed, or became invalid.
+The repository includes manually reviewed synthetic data, published labeling policies, deterministic scoring, a zero-setup baseline, a local Ollama runner, and a human-first rubric-calibration lab. Version 0.2.3 publishes a complete model decision cycle; the v0.3 work starts subjective response-quality evaluation without pretending an LLM judge is already trustworthy.
 
 **Latest decision:** Qwen3 4B passed the development gate but failed the one-time test gate because exact match was 60% against a pre-committed 70% threshold. The prototype was rejected, the raw failures were published, and the consumed test set was permanently marked as a regression suite.
 
 **Latest audit:** The generated Qwen prompt report found and corrected a hand-counting error: an invalid-schema response had been credited as a field improvement. This is why eval tooling should make failure transitions reproducible, not anecdotal.
 
-**[See the paired prompt report](https://github.com/Reddy986/open-product-evals/blob/main/results/published/2026-07-18-priority-rubric-v2/qwen3-4b-variant-comparison.md)**, **[try the 60-second baseline](https://github.com/Reddy986/open-product-evals#try-the-complete-eval-loop-in-60-seconds)**, or follow **[Learn LLM evals by doing](https://github.com/Reddy986/open-product-evals/blob/main/docs/EVALS_101.md)**.
+**Current experiment:** Before using an LLM judge for response quality, can two humans apply the same observable rubric consistently? The v0.3 lab creates blind annotation sheets, pins dataset and rubric fingerprints, measures ordinal and critical-failure agreement, and refuses misleading constant-label “perfect agreement.” It publishes no fabricated human score.
+
+**[Try the human rubric-calibration lab](https://github.com/Reddy986/open-product-evals/blob/main/docs/RUBRIC_CALIBRATION.md)** or **[complete an independent review](https://github.com/Reddy986/open-product-evals/issues/11)**. For the objective triage eval, **[see the paired prompt report](https://github.com/Reddy986/open-product-evals/blob/main/results/published/2026-07-18-priority-rubric-v2/qwen3-4b-variant-comparison.md)**, **[try the 60-second baseline](https://github.com/Reddy986/open-product-evals#try-the-complete-eval-loop-in-60-seconds)**, or follow **[Learn LLM evals by doing](https://github.com/Reddy986/open-product-evals/blob/main/docs/EVALS_101.md)**.
 
 ## What I care about
 
